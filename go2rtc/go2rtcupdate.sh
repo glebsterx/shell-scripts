@@ -11,6 +11,7 @@ get_curent_version() {
 }
 
 
+#latest="v1.1.2"
 latest=$(get_latest_release)
 url="https://github.com/AlexxIT/go2rtc/releases/download/${latest}/go2rtc_linux_amd64"
 curent=$(get_curent_version)
@@ -21,9 +22,9 @@ if [ "$latest" == "$curent" ]; then
 else
   echo "Curent Version:${curent}"
   echo "getting update New Version:${latest}"
-  sudo systemctl stop go2rtc # Stop go2rtc Service
-  sudo rm go2rtc_linux_amd64 # remove old version binary
-  sudo wget $url 
-  sudo chmod +x go2rtc_linux_amd64 #Set exec bit
-  sudo systemctl start go2rtc # Start go2rtc Service
+  sudo systemctl stop go2rtc
+  sudo rm go2rtc_linux_amd64
+  sudo wget $url
+  sudo chmod +x go2rtc_linux_amd64
+  sudo systemctl start go2rtc
 fi
