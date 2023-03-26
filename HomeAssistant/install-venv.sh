@@ -24,6 +24,7 @@ RestartForceExitStatus=100
 [Install]
 WantedBy=multi-user.target
 EOF
+setcap 'cap_net_raw,cap_net_admin+eip' `readlink -f \`which python3\``
 systemctl daemon-reload
 systemctl start home-assistant@homeassistant
 systemctl enable home-assistant@homeassistant
