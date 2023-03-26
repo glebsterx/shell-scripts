@@ -20,6 +20,10 @@ source /srv/homeassistant/bin/activate
 
 EOF
 
+# Access rights to bluetooth
+
+setcap 'cap_net_raw,cap_net_admin+eip' `readlink -f \`which python3\``
+
 # start HA
 
 sudo systemctl start home-assistant@homeassistant
