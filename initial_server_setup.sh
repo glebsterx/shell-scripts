@@ -1,5 +1,6 @@
-$LOGIN="glebsterx"
-$SMBPASSWORD="password"
+#!/bin/bash
+LOGIN="glebsterx"
+SMBPASSWORD="password"
 # ssh
 sudo apt-get install ssh -y
 # webmin
