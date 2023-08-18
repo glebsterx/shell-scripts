@@ -1,8 +1,9 @@
 #!/bin/bash
 read -p "Enter username (default=$(id -u -n)): " LOGIN
 if ! test -n "$LOGIN"; then
-    LOGIN=$(id -u -n)
+    LOGIN="$(id -u -n)"
 fi
+
 read -p "Enter SMB password (default=password): " SMBPASSWORD
 if ! test -n "$SMBPASSWORD"; then
     SMBPASSWORD="password"
