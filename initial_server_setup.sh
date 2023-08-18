@@ -1,3 +1,5 @@
+$LOGIN = "glebsterx"
+$SMBPASSWORD = "password"
 # ssh
 sudo apt-get install ssh -y
 # webmin
@@ -13,7 +15,7 @@ sudo systemctl enable smbd
 sudo cp /etc/samba/smb.conf /etc/samba/smb_backup.conf
 grep -v '^ *;\|^ *#\|^ *$' /etc/samba/smb.conf | sudo tee /etc/samba/smb.conf
 sudo systemctl start smbd
-sudo smbpasswd -a glebsterx
+echo -ne "$SMBPASSWORD\n$SMBPASSWORD\n" | smbpasswd -a -s $LOGIN
 sudo echo "[data]
     comment =  data
     path =  /data
