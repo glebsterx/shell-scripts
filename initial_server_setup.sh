@@ -1,7 +1,7 @@
 #!/bin/bash
-read -p "Enter username (default=user): " LOGIN
+read -p "Enter username (default=$(id -u -n)): " LOGIN
 if ! test -n "$LOGIN"; then
-    LOGIN="user"
+    LOGIN=$(id -u -n)
 fi
 read -p "Enter SMB password (default=password): " SMBPASSWORD
 if ! test -n "$SMBPASSWORD"; then
