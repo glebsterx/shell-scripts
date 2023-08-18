@@ -11,7 +11,7 @@ sudo mkdir /data
 sudo apt-get install samba -y
 sudo systemctl enable smbd
 sudo cp /etc/samba/smb.conf /etc/samba/smb_backup.conf
-grep -v '^ *#\|^ *$' /etc/samba/smb.conf | sudo tee /etc/samba/smb.conf
+grep -v '^ *;\|^ *#\|^ *$' /etc/samba/smb.conf | sudo tee /etc/samba/smb.conf
 sudo systemctl start smbd
 sudo smbpasswd -a glebsterx
 sudo echo "[data]
