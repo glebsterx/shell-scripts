@@ -8,6 +8,7 @@ read -p "Enter SMB password (default=password): " SMBPASSWORD
 if ! test -n "$SMBPASSWORD"; then
     SMBPASSWORD="password"
 fi
+
 # ssh
 sudo apt-get install ssh -y
 # webmin
