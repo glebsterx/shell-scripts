@@ -1,6 +1,12 @@
 #!/bin/bash
-LOGIN="glebsterx"
-SMBPASSWORD="password"
+read -p "Enter username (default=user): " LOGIN
+if ! test -n "$LOGIN"; then
+    LOGIN="user"
+fi
+read -p "Enter SMB password (default=password): " SMBPASSWORD
+if ! test -n "$SMBPASSWORD"; then
+    SMBPASSWORD="password"
+fi
 # ssh
 sudo apt-get install ssh -y
 # webmin
